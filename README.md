@@ -28,5 +28,18 @@ This project demonstrates the use of **Apache Flink** to ingest, process, and an
 ## Example Output
 
 Here is a sample output you may see printed on the console:
+
 ![Capture d'écran 2024-11-16 155647](https://github.com/user-attachments/assets/c2cb29ad-0330-48e3-9d83-8dd9184847c7)
 
+## Flink Output:
+
+![image](https://github.com/user-attachments/assets/238a9e9f-58b4-4f32-ae12-709150fa94d1)
+
+## Running the project 
+
+-Start Kafka and Zookeeper.
+-Run the data producer to stream cryptocurrency data.
+-Run the Flink consumer job to process the data and apply filters.
+-(Optional) Set up a visualization in Grafana for real-time monitoring.
+
+#Author : Mohamed Jihed Bhar
