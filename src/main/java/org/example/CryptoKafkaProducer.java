@@ -1,4 +1,5 @@
 package org.example;
+
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.clients.producer.ProducerConfig;
@@ -47,8 +48,13 @@ public class CryptoKafkaProducer {
                     JsonNode coins = objectMapper.readTree(response.body());
                     for (JsonNode coin : coins) {
                         String coinName = coin.get("name").asText();
-                        String coinPrice = coin.get("current_price").asText();
-                        String message = String.format("Coin: %s, Price: %s", coinName, coinPrice);
+                        double coinPrice = coin.get("current_price").asDouble();
+
+                        // Create CryptoPrice object
+                        CryptoPrice cryptoPrice = new CryptoPrice(coinName, coinPrice);
+
+                        // Serialize the CryptoPrice object to JSON
+                        String message = objectMapper.writeValueAsString(cryptoPrice);
 
                         // Send data to Kafka
                         producer.send(new ProducerRecord<>(KAFKA_TOPIC, coinName, message));
@@ -60,5 +66,32 @@ public class CryptoKafkaProducer {
                 }
             }
         }, 0, 60000); // Fetch data every 60 seconds
+    }
+
+    // CryptoPrice class to represent cryptocurrency data
+    public static class CryptoPrice {
+        private String cryptoName;
+        private double price;
+
+        public CryptoPrice(String cryptoName, double price) {
+            this.cryptoName = cryptoName;
+            this.price = price;
+        }
+
+        public String getCryptoName() {
+            return cryptoName;
+        }
+
+        public double getPrice() {
+            return price;
+        }
+
+        @Override
+        public String toString() {
+            return "CryptoPrice{" +
+                    "cryptoName='" + cryptoName + '\'' +
+                    ", price=" + price +
+                    '}';
+        }
     }
 }
