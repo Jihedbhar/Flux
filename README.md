@@ -19,7 +19,7 @@ This project demonstrates the use of **Apache Flink** to ingest, process, and an
 
 ## Prerequisites
 
-- **Kafka** running on localhost:9092 (or adjust as necessary).
+- **Kafka** running on localhost:9092 (or adjust as necessary).\\
 - **Apache Flink** set up and running.
 - **CoinGecko API** key (if needed).
 
