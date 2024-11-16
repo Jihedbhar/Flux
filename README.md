@@ -25,12 +25,8 @@ This project demonstrates the use of **Apache Flink** to ingest, process, and an
 
 ---
 
-## Setup Instructions
+## Example Output
 
-### 1. Install Kafka (if not installed already):
+Here is a sample output you may see printed on the console:
+![Capture d'écran 2024-11-16 155647](https://github.com/user-attachments/assets/c2cb29ad-0330-48e3-9d83-8dd9184847c7)
 
-- Download and extract Kafka from [Apache Kafka Downloads](https://kafka.apache.org/downloads).
-- Start Zookeeper and Kafka brokers by running the following commands:
-  ```bash
-  bin/zookeeper-server-start.sh config/zookeeper.properties
-  bin/kafka-server-start.sh config/server.properties
