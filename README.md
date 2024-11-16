@@ -42,4 +42,4 @@ Here is a sample output you may see printed on the console:
 -Run the Flink consumer job to process the data and apply filters.  
 -(Optional) Set up a visualization in Grafana for real-time monitoring.  
 
-#Author : Mohamed Jihed Bhar
+# Author : Mohamed Jihed Bhar
