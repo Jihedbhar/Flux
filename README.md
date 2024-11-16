@@ -37,9 +37,9 @@ Here is a sample output you may see printed on the console:
 
 ## Running the project 
 
--Start Kafka and Zookeeper.
--Run the data producer to stream cryptocurrency data.
--Run the Flink consumer job to process the data and apply filters.
--(Optional) Set up a visualization in Grafana for real-time monitoring.
+-Start Kafka and Zookeeper.  
+-Run the data producer to stream cryptocurrency data.  
+-Run the Flink consumer job to process the data and apply filters.  
+-(Optional) Set up a visualization in Grafana for real-time monitoring.  
 
 #Author : Mohamed Jihed Bhar
